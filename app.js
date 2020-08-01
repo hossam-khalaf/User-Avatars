@@ -1,11 +1,13 @@
+import getAvatar from './getAvatar.js';
+
 const users = [
   {
     name: 'Helen Coppola',
-    avatar: 'https://www.w3schools.com/w3images/avatar5.png',
+    // avatar: 'https://www.w3schools.com/w3images/avatar5.png',
   },
   {
     name: 'Nick Ronins',
-    avatar: 'https://www.w3schools.com/bootstrap4/img_avatar1.png',
+    // avatar: 'https://www.w3schools.com/bootstrap4/img_avatar1.png',
   },
   {
     name: 'Chris Harris',
@@ -17,7 +19,7 @@ const users = [
   },
   {
     name: 'Tim Johnson',
-    avatar: 'https://www.w3schools.com/bootstrap4/img_avatar1.png',
+    // avatar: 'https://www.w3schools.com/bootstrap4/img_avatar1.png',
   },
   {
     name: 'Antonette Martinez',
@@ -34,11 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     userCard.className = 'user-card';
     userCard.innerText = user.name;
 
-    const userAvatar = document.createElement('img');
-    userAvatar.className = 'user-avatar';
-    userAvatar.src = user.avatar;
-
-    userCard.prepend(userAvatar);
+    userCard.prepend(getAvatar(user.name, user.avatar));
     listUserCards.append(userCard);
   });
 
